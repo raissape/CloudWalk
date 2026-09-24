@@ -1,0 +1,862 @@
+{
+  "report_metadata": {
+    "generated_at_utc": "2026-09-24T00:06:30Z",
+    "assessment_date": "2026-09-22",
+    "control_id": "VM-01",
+    "control_name": "Timely vulnerability remediation",
+    "overall_status": "FAIL"
+  },
+  "control_mapping": {
+    "primary_framework_requirement": {
+      "framework": "PCI DSS v4.0.1",
+      "requirement": "6.3.3",
+      "requirement_title": "Applicable security patches and updates are installed",
+      "applicability": "Critical vulnerabilities must be addressed within one month of release."
+    },
+    "supporting_policy_requirement": {
+      "framework": "Internal Vulnerability Remediation Policy",
+      "requirement": "VM-01",
+      "requirement_title": "Timely remediation and evidence retention",
+      "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+    },
+    "mapping_rationale": "Critical findings test PCI DSS v4.0.1 Requirement 6.3.3. High, medium, and low findings are evaluated against configurable internal VM-01 SLAs and are not represented as direct PCI 6.3.3 failures."
+  },
+  "policy": {
+    "critical_remediation_days": 30,
+    "high_remediation_days": 60,
+    "medium_remediation_days": 90,
+    "low_remediation_days": 180,
+    "evidence_max_age_days": 30
+  },
+  "summary_by_result": {
+    "pass": {
+      "count": 4,
+      "items": [
+        {
+          "vulnerability_id": "CVE-2026-1001",
+          "system": "payment-api-01",
+          "reason_codes": [],
+          "impacted_requirements": [
+            "PCI DSS v4.0.1 6.3.3",
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1007",
+          "system": "web-app-03",
+          "reason_codes": [],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1008",
+          "system": "card-worker-01",
+          "reason_codes": [],
+          "impacted_requirements": [
+            "PCI DSS v4.0.1 6.3.3",
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1010",
+          "system": "billing-api-01",
+          "reason_codes": [],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        }
+      ]
+    },
+    "fail": {
+      "count": 13,
+      "items": [
+        {
+          "vulnerability_id": "CVE-2026-1002",
+          "system": "checkout-web-02",
+          "reason_codes": [
+            "REMEDIATION_SLA_EXCEEDED",
+            "MISSING_EVIDENCE",
+            "OPEN_ITEM_WITHOUT_EXCEPTION"
+          ],
+          "impacted_requirements": [
+            "PCI DSS v4.0.1 6.3.3",
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1004",
+          "system": "legacy-app-01",
+          "reason_codes": [
+            "REMEDIATION_SLA_EXCEEDED",
+            "EXCEPTION_EXPIRED",
+            "OPEN_ITEM_WITHOUT_EXCEPTION"
+          ],
+          "impacted_requirements": [
+            "PCI DSS v4.0.1 6.3.3",
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1005",
+          "system": "internal-tool-01",
+          "reason_codes": [
+            "REMEDIATION_SLA_EXCEEDED",
+            "OPEN_ITEM_WITHOUT_EXCEPTION"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1006",
+          "system": "auth-service-01",
+          "reason_codes": [
+            "EVIDENCE_BEFORE_REMEDIATION"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1009",
+          "system": "card-worker-02",
+          "reason_codes": [
+            "REMEDIATION_SLA_EXCEEDED"
+          ],
+          "impacted_requirements": [
+            "PCI DSS v4.0.1 6.3.3",
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1011",
+          "system": "reporting-db-01",
+          "reason_codes": [
+            "MISSING_REMEDIATION_DATE"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1012",
+          "system": "token-service-01",
+          "reason_codes": [
+            "MISSING_DISCOVERY_DATE"
+          ],
+          "impacted_requirements": [
+            "PCI DSS v4.0.1 6.3.3",
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1013",
+          "system": "portal-web-01",
+          "reason_codes": [
+            "EVIDENCE_DATE_IN_FUTURE"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1014",
+          "system": "analytics-worker-01",
+          "reason_codes": [
+            "STALE_EVIDENCE"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1015",
+          "system": "inventory-api-01",
+          "reason_codes": [
+            "REMEDIATION_SLA_EXCEEDED",
+            "OPEN_ITEM_WITHOUT_EXCEPTION"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1016",
+          "system": "archive-service-01",
+          "reason_codes": [
+            "STALE_EVIDENCE"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1017",
+          "system": "legacy-reporting-01",
+          "reason_codes": [
+            "REMEDIATION_SLA_EXCEEDED",
+            "OPEN_ITEM_WITHOUT_EXCEPTION"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1019",
+          "system": "batch-runner-01",
+          "reason_codes": [
+            "REMEDIATION_SLA_EXCEEDED"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        }
+      ]
+    },
+    "exception": {
+      "count": 2,
+      "items": [
+        {
+          "vulnerability_id": "CVE-2026-1003",
+          "system": "db-prod-01",
+          "reason_codes": [
+            "REMEDIATION_SLA_EXCEEDED"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        },
+        {
+          "vulnerability_id": "CVE-2026-1018",
+          "system": "customer-portal-02",
+          "reason_codes": [
+            "REMEDIATION_SLA_EXCEEDED"
+          ],
+          "impacted_requirements": [
+            "Internal Vulnerability Remediation Policy VM-01"
+          ]
+        }
+      ]
+    },
+    "not_in_scope": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "findings": [
+    {
+      "vulnerability_id": "CVE-2026-1001",
+      "system": "payment-api-01",
+      "severity": "CRITICAL",
+      "status": "PASS",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 14,
+      "remediation_sla_days": 30,
+      "evidence_id": "CHG-1042",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [],
+      "reason_details": [],
+      "framework_requirements": [
+        {
+          "framework": "PCI DSS v4.0.1",
+          "requirement": "6.3.3",
+          "requirement_title": "Applicable security patches and updates are installed",
+          "applicability": "Critical vulnerabilities must be addressed within one month of release."
+        },
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1002",
+      "system": "checkout-web-02",
+      "severity": "CRITICAL",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 64,
+      "remediation_sla_days": 30,
+      "evidence_id": "",
+      "evidence_status": "MISSING",
+      "exception_id": "",
+      "reason_codes": [
+        "REMEDIATION_SLA_EXCEEDED",
+        "MISSING_EVIDENCE",
+        "OPEN_ITEM_WITHOUT_EXCEPTION"
+      ],
+      "reason_details": [
+        {
+          "code": "REMEDIATION_SLA_EXCEEDED",
+          "description": "The vulnerability exceeded the configured remediation SLA."
+        },
+        {
+          "code": "MISSING_EVIDENCE",
+          "description": "No complete evidence ID and evidence date were supplied."
+        },
+        {
+          "code": "OPEN_ITEM_WITHOUT_EXCEPTION",
+          "description": "The open overdue item does not have a valid approved exception."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "PCI DSS v4.0.1",
+          "requirement": "6.3.3",
+          "requirement_title": "Applicable security patches and updates are installed",
+          "applicability": "Critical vulnerabilities must be addressed within one month of release."
+        },
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1003",
+      "system": "db-prod-01",
+      "severity": "HIGH",
+      "status": "EXCEPTION",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 83,
+      "remediation_sla_days": 60,
+      "evidence_id": "SCAN-883",
+      "evidence_status": "CURRENT",
+      "exception_id": "EXC-77",
+      "reason_codes": [
+        "REMEDIATION_SLA_EXCEEDED"
+      ],
+      "reason_details": [
+        {
+          "code": "REMEDIATION_SLA_EXCEEDED",
+          "description": "The vulnerability exceeded the configured remediation SLA."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1004",
+      "system": "legacy-app-01",
+      "severity": "CRITICAL",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 83,
+      "remediation_sla_days": 30,
+      "evidence_id": "SCAN-700",
+      "evidence_status": "CURRENT",
+      "exception_id": "EXC-44",
+      "reason_codes": [
+        "REMEDIATION_SLA_EXCEEDED",
+        "EXCEPTION_EXPIRED",
+        "OPEN_ITEM_WITHOUT_EXCEPTION"
+      ],
+      "reason_details": [
+        {
+          "code": "REMEDIATION_SLA_EXCEEDED",
+          "description": "The vulnerability exceeded the configured remediation SLA."
+        },
+        {
+          "code": "EXCEPTION_EXPIRED",
+          "description": "The exception expired before the assessment date."
+        },
+        {
+          "code": "OPEN_ITEM_WITHOUT_EXCEPTION",
+          "description": "The open overdue item does not have a valid approved exception."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "PCI DSS v4.0.1",
+          "requirement": "6.3.3",
+          "requirement_title": "Applicable security patches and updates are installed",
+          "applicability": "Critical vulnerabilities must be addressed within one month of release."
+        },
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1005",
+      "system": "internal-tool-01",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 113,
+      "remediation_sla_days": 90,
+      "evidence_id": "SCAN-500",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [
+        "REMEDIATION_SLA_EXCEEDED",
+        "OPEN_ITEM_WITHOUT_EXCEPTION"
+      ],
+      "reason_details": [
+        {
+          "code": "REMEDIATION_SLA_EXCEEDED",
+          "description": "The vulnerability exceeded the configured remediation SLA."
+        },
+        {
+          "code": "OPEN_ITEM_WITHOUT_EXCEPTION",
+          "description": "The open overdue item does not have a valid approved exception."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1006",
+      "system": "auth-service-01",
+      "severity": "HIGH",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 8,
+      "remediation_sla_days": 60,
+      "evidence_id": "CHG-1099",
+      "evidence_status": "INVALID",
+      "exception_id": "",
+      "reason_codes": [
+        "EVIDENCE_BEFORE_REMEDIATION"
+      ],
+      "reason_details": [
+        {
+          "code": "EVIDENCE_BEFORE_REMEDIATION",
+          "description": "For a remediated item, the evidence predates remediation."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1007",
+      "system": "web-app-03",
+      "severity": "HIGH",
+      "status": "PASS",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 40,
+      "remediation_sla_days": 60,
+      "evidence_id": "CHG-1100",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [],
+      "reason_details": [],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1008",
+      "system": "card-worker-01",
+      "severity": "CRITICAL",
+      "status": "PASS",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 14,
+      "remediation_sla_days": 30,
+      "evidence_id": "CHG-1101",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [],
+      "reason_details": [],
+      "framework_requirements": [
+        {
+          "framework": "PCI DSS v4.0.1",
+          "requirement": "6.3.3",
+          "requirement_title": "Applicable security patches and updates are installed",
+          "applicability": "Critical vulnerabilities must be addressed within one month of release."
+        },
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1009",
+      "system": "card-worker-02",
+      "severity": "CRITICAL",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 40,
+      "remediation_sla_days": 30,
+      "evidence_id": "CHG-1102",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [
+        "REMEDIATION_SLA_EXCEEDED"
+      ],
+      "reason_details": [
+        {
+          "code": "REMEDIATION_SLA_EXCEEDED",
+          "description": "The vulnerability exceeded the configured remediation SLA."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "PCI DSS v4.0.1",
+          "requirement": "6.3.3",
+          "requirement_title": "Applicable security patches and updates are installed",
+          "applicability": "Critical vulnerabilities must be addressed within one month of release."
+        },
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1010",
+      "system": "billing-api-01",
+      "severity": "HIGH",
+      "status": "PASS",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 33,
+      "remediation_sla_days": 60,
+      "evidence_id": "SCAN-901",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [],
+      "reason_details": [],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1011",
+      "system": "reporting-db-01",
+      "severity": "HIGH",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 28,
+      "remediation_sla_days": 60,
+      "evidence_id": "CHG-1110",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [
+        "MISSING_REMEDIATION_DATE"
+      ],
+      "reason_details": [
+        {
+          "code": "MISSING_REMEDIATION_DATE",
+          "description": "The item is marked remediated but has no remediation date."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1012",
+      "system": "token-service-01",
+      "severity": "CRITICAL",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": null,
+      "remediation_sla_days": 30,
+      "evidence_id": "SCAN-920",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [
+        "MISSING_DISCOVERY_DATE"
+      ],
+      "reason_details": [
+        {
+          "code": "MISSING_DISCOVERY_DATE",
+          "description": "The discovery date required to calculate remediation timeliness is missing."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "PCI DSS v4.0.1",
+          "requirement": "6.3.3",
+          "requirement_title": "Applicable security patches and updates are installed",
+          "applicability": "Critical vulnerabilities must be addressed within one month of release."
+        },
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1013",
+      "system": "portal-web-01",
+      "severity": "HIGH",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 13,
+      "remediation_sla_days": 60,
+      "evidence_id": "CHG-1120",
+      "evidence_status": "INVALID",
+      "exception_id": "",
+      "reason_codes": [
+        "EVIDENCE_DATE_IN_FUTURE"
+      ],
+      "reason_details": [
+        {
+          "code": "EVIDENCE_DATE_IN_FUTURE",
+          "description": "The evidence date is after the assessment date."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1014",
+      "system": "analytics-worker-01",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 45,
+      "remediation_sla_days": 90,
+      "evidence_id": "CHG-1130",
+      "evidence_status": "STALE",
+      "exception_id": "",
+      "reason_codes": [
+        "STALE_EVIDENCE"
+      ],
+      "reason_details": [
+        {
+          "code": "STALE_EVIDENCE",
+          "description": "The evidence is older than the configured freshness threshold."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1015",
+      "system": "inventory-api-01",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 144,
+      "remediation_sla_days": 90,
+      "evidence_id": "SCAN-930",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [
+        "REMEDIATION_SLA_EXCEEDED",
+        "OPEN_ITEM_WITHOUT_EXCEPTION"
+      ],
+      "reason_details": [
+        {
+          "code": "REMEDIATION_SLA_EXCEEDED",
+          "description": "The vulnerability exceeded the configured remediation SLA."
+        },
+        {
+          "code": "OPEN_ITEM_WITHOUT_EXCEPTION",
+          "description": "The open overdue item does not have a valid approved exception."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1016",
+      "system": "archive-service-01",
+      "severity": "LOW",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 122,
+      "remediation_sla_days": 180,
+      "evidence_id": "CHG-1140",
+      "evidence_status": "STALE",
+      "exception_id": "",
+      "reason_codes": [
+        "STALE_EVIDENCE"
+      ],
+      "reason_details": [
+        {
+          "code": "STALE_EVIDENCE",
+          "description": "The evidence is older than the configured freshness threshold."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1017",
+      "system": "legacy-reporting-01",
+      "severity": "LOW",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 264,
+      "remediation_sla_days": 180,
+      "evidence_id": "SCAN-940",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [
+        "REMEDIATION_SLA_EXCEEDED",
+        "OPEN_ITEM_WITHOUT_EXCEPTION"
+      ],
+      "reason_details": [
+        {
+          "code": "REMEDIATION_SLA_EXCEEDED",
+          "description": "The vulnerability exceeded the configured remediation SLA."
+        },
+        {
+          "code": "OPEN_ITEM_WITHOUT_EXCEPTION",
+          "description": "The open overdue item does not have a valid approved exception."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1018",
+      "system": "customer-portal-02",
+      "severity": "MEDIUM",
+      "status": "EXCEPTION",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 130,
+      "remediation_sla_days": 90,
+      "evidence_id": "SCAN-950",
+      "evidence_status": "CURRENT",
+      "exception_id": "EXC-95",
+      "reason_codes": [
+        "REMEDIATION_SLA_EXCEEDED"
+      ],
+      "reason_details": [
+        {
+          "code": "REMEDIATION_SLA_EXCEEDED",
+          "description": "The vulnerability exceeded the configured remediation SLA."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    },
+    {
+      "vulnerability_id": "CVE-2026-1019",
+      "system": "batch-runner-01",
+      "severity": "LOW",
+      "status": "FAIL",
+      "control_id": "VM-01",
+      "control_name": "Timely vulnerability remediation",
+      "days_to_remediate_or_open": 193,
+      "remediation_sla_days": 180,
+      "evidence_id": "CHG-1150",
+      "evidence_status": "CURRENT",
+      "exception_id": "",
+      "reason_codes": [
+        "REMEDIATION_SLA_EXCEEDED"
+      ],
+      "reason_details": [
+        {
+          "code": "REMEDIATION_SLA_EXCEEDED",
+          "description": "The vulnerability exceeded the configured remediation SLA."
+        }
+      ],
+      "framework_requirements": [
+        {
+          "framework": "Internal Vulnerability Remediation Policy",
+          "requirement": "VM-01",
+          "requirement_title": "Timely remediation and evidence retention",
+          "applicability": "Critical and high vulnerabilities must meet configured SLAs and retain current evidence."
+        }
+      ]
+    }
+  ]
+}
